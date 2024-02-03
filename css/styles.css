@@ -25,7 +25,7 @@ a {
 }
 
 a:hover{
-    cursor: url(/images/bxs_hand-down.png), pointer;
+    cursor:  zoom-in;
     
 }
 
