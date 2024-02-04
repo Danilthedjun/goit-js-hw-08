@@ -66,6 +66,7 @@ const images = [
 
 const container = document.querySelector('.gallery');
 container.innerHTML = createGallery(images);
+let instance;
 
 function createGallery(images) {
   return images
@@ -92,7 +93,7 @@ container.addEventListener('click', event => {
     return;
   }
 
-  basicLightbox
+  instance = basicLightbox
     .create(
       `
     <div class="modal">
