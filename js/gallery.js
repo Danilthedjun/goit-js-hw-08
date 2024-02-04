@@ -93,13 +93,21 @@ container.addEventListener('click', event => {
     return;
   }
 
-  instance = basicLightbox
-    .create(
-      `
+  instance = basicLightbox.create(
+    `
     <div class="modal">
         <img src="${event.target.dataset.source}">
     </div>
 `
-    )
-    .show();
+  );
+  instance.show();
+
+  document.addEventListener('keydown', closeLightboxOnEscape);
+
+  function closeLightboxOnEscape(e) {
+    if (e.key === 'Escape') {
+      instance.close();
+      document.removeEventListener('keydown', closeLightboxOnEscape);
+    }
+  }
 });
